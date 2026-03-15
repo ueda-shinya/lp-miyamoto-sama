@@ -96,23 +96,6 @@
       </main>
     </div>
     <script src="./assets/js/lazyload-prioritize.js" defer></script>
-    <!--  -->
-    <script src="./assets/js/cookie-consent.bundle.js" defer></script>
-    <script defer>
-      window.addEventListener("DOMContentLoaded", function () {
-        if (window.CookieConsent && typeof window.CookieConsent.init === "function") {
-          window.CookieConsent.init({
-            policyUrl: "/privacy.html",
-            ga4: { measurementId: "G-XXXXXXXXXX" },
-            optionalScripts: [
-              { src: "https://example.com/heatmap.js" }
-            ]
-          });
-        } else {
-          console.warn("CookieConsent bundle not loaded");
-        }
-      });
-    </script>
   </body>
 
 </html>
