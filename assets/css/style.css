@@ -119,3 +119,42 @@ a:hover {
 @media screen and (max-width: 767px) {
   /* ここに767ピクセル以下のモバイルデバイス向けのCSSスタイルを記述 */
 }
+
+.footer_a {
+  display: block;
+  position: fixed;
+  width: 72.9rem;
+  height: auto;
+  bottom: 2rem;
+  z-index: 999;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.footer_a {
+  /* 初期表示状態 */
+  opacity: 1;
+  /* transform: translateY(0); */
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  will-change: opacity, transform; /* スクロール連動のパフォーマンス補助 */
+}
+.footer_a .btn-footer-cta_img{
+  width: 100%;
+  bottom: unset;
+}
+/* 非表示アニメーション状態 */
+.footer_a.is-hidden {
+  opacity: 0;
+  transform: translate(
+    -50%,
+    clamp(1px, calc(160 / 1000 * 100vw), 160px)
+  ); /* 少し沈む感じ。不要なら 0 に */
+  pointer-events: none;
+}
+
+/* アニメーションを好まないユーザー配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .footer_a {
+    transition: none !important;
+  }
+}
